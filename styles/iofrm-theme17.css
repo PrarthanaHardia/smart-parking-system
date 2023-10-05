@@ -79,8 +79,8 @@
 }
 
 .img-holder .bg {
-    opacity: 0.23;
-    background-image: url("../images/img1.jpg");
+    opacity: 1;
+    background-image: url("../images/s3.jpg");
 }
 
 .form-holder {
