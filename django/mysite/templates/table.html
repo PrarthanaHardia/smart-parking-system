@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+</head>
+<body>
+
+<h2>sales</h2>
+
+<table>
+  <tr>
+    <th>    </th>
+    <th>    </th>
+    <th>    </th>
+  </tr>
+ 
+  {% comment %} <tr>
+              <td>{{ rows }}</td>
+              <td>{{ rows }}</td>
+  </tr> {% endcomment %}
+
+  {% for col in rows %}
+  <tr>
+              <td>{{ col }}</td>
+              <td>{{ col }}</td>
+              
+  </tr>
+          {% endfor %}
+    
+      <tr>
+    <td>   </td>
+    <td>   </td>
+    <td>   </td>
+  </tr>
+  <tr>
+    <td>   </td>
+    <td>   </td>
+    <td>   </td>
+  </tr>
+  <tr>
+    <td>   </td>
+    <td>   </td>
+    <td>   </td>
+  </tr>
+  
+</table>
+
+</body>
+</html> 
+
+
+
+
+
+{% comment %} <div class='container'>
+    <div class="row">
+    {% for category in categories %}
+  
+        <div class="col-6 col-md-4">
+            <h3>{{category.category_name}}</h3>
+            {% for page in category.page_set.all %}
+            <p>{{page.page_title}}</p>                 
+            {% endfor %}
+        </div>  
+    {% else %}
+    <div class="row">
+        <div class="col-6 col-md-4">
+            <h3>{{category.category_name}}</h3>
+            {% for page in category.page_set.all %}
+            <p>{{page.page_title}}</p>                 
+            {% endfor %}
+        </div> 
+    {% endif %} 
+    {% endfor %}
+</div> {% endcomment %}

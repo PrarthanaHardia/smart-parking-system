@@ -1,0 +1,78 @@
+
+{% comment %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="new.css">
+    <link rel="stylesheet" href="new.js">
+    <title>file Upload</title>
+</head>
+<body>
+    
+
+    <div class="upload-container">
+        <input type="file" id="fileInput" />
+        <label for="fileInput" class="upload-button">Upload file</label>
+        <div id="previewContainer" class="preview-container"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+{% endcomment %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" type="text/js" href="/static/js/new.js">
+    <link rel="stylesheet" type="text/css" href="/static/style/new.css">
+    <title>file</title>
+    <script type="text/javascript">
+        const selectImage =document.querySelector('.select-Image');
+const inputFile =document.querySelector('#file');
+const imgArea =document.querySelector('.img-area');
+
+selectImage.addEventListener('click',function(){
+    inputFile.click();
+})
+
+inputFile.addEventListener('change',function (){
+    const image= this.files[0]
+    console.log(image);
+    const reader= new FileReader();
+    reader.onload=()=>{
+        const allImg = imgArea.querySelectorAll('img');
+        allImg.forEach(item =>item.remove()); 
+        const imgurl =reader.result;
+        const img =document.createElement('img')
+        img.src= imgurl;
+        imgArea.appendChild(img);
+        imgArea.classList.add('active');
+    }
+    reader.readAsDataURL(image.name);
+  
+})
+    </script>
+</head>
+<body>
+
+    <div class="container">
+        <input type="file" id="file" accept="file/* hidden">
+         <div class="img-area" > 
+          
+
+          <i class='bx bxs-cloud-upload icon'></i>
+          <h3>Upload file</h3>
+          
+          </div>
+        <button class="upload-file">upload file</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

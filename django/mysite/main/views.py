@@ -13,5 +13,11 @@ def login(request):
 def home(request):
     return render(request,"home.html")
 
+def new(request):
+    return render(request,"new.html")
+
+def table(request):
+    return render(request,"table.html")
+
 def start(request):
     return render(request,"start.html")
